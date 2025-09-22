@@ -15,23 +15,12 @@ export default async function AuthPage({
 }) {
     const { path } = await params
 
-    // **EXAMPLE** SSR route protection for /auth/settings
-    // NOTE: This opts /auth/settings out of static rendering
-    // It already handles client side protection via useAuthenticate
-    // if (pathname === "settings") {
-    //     const sessionData = await auth.api.getSession({
-    //         headers: await headers()
-    //     })
-
-    //     if (!sessionData) redirect("/auth/sign-in?redirectTo=/auth/settings")
-    // }
-
     return (
         <main className="container flex grow flex-col items-center justify-center gap-4 self-center p-4 md:p-6">
             <AuthView path={path} />
 
-            <p className="text-muted-foreground text-xs">
-                By continuing, you agree to the{" "}
+            <p className="w-3xs text-center text-muted-foreground text-xs">
+                By continuing, you agree to our{" "}
                 <Link
                     className="text-warning underline"
                     href="/terms"

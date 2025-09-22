@@ -41,11 +41,8 @@ export function Providers({ children }: { children: ReactNode }) {
                     router.refresh()
                 }}
                 baseURL={
-                    typeof window !== "undefined" &&
-                    isTauri() &&
-                    platform() === "macos" &&
-                    isProduction
-                        ? `bas://`
+                    isProduction && isTauri() && platform() === "macos"
+                        ? "bas://"
                         : undefined
                 }
                 social={{

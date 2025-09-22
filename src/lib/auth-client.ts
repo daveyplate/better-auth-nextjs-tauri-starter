@@ -9,7 +9,7 @@ export const authClient = createAuthClient({
     baseURL,
     fetchOptions: {
         customFetchImpl: (...params) =>
-            isTauri() && platform() === "macos" && isProduction
+            isProduction && isTauri() && platform() === "macos"
                 ? tauriFetch(...params)
                 : fetch(...params)
     }

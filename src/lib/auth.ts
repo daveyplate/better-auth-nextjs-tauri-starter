@@ -4,6 +4,7 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle"
 
 import { db } from "@/database/db"
 import * as schema from "@/database/schema"
+import { isProduction } from "./utils"
 
 export const auth = betterAuth({
     database: drizzleAdapter(db, {
@@ -30,17 +31,9 @@ export const auth = betterAuth({
         "null*"
     ],
     advanced: {
-        defaultCookieAttributes:
-            process.env.NODE_ENV === "production"
-                ? {
-                      sameSite: "none",
-                      secure: true
-                  }
-                : undefined
+        defaultCookieAttributes: isProduction
+            ? { sameSite: "none", secure: true }
+            : undefined
     },
-    plugins: [
-        tauri({
-            scheme: "bas"
-        })
-    ]
+    plugins: [tauri({ scheme: "bas" })]
 })

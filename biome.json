@@ -1,12 +1,17 @@
 {
-    "$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
+    "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
     "vcs": {
         "enabled": true,
         "clientKind": "git",
         "useIgnoreFile": true
     },
     "files": {
-        "includes": ["**", "!components/ui/**", "!migrations/**", "!**/*.css"]
+        "includes": [
+            "**",
+            "!**/*.css",
+            "!src/components/ui/**/*",
+            "!migrations/**/*"
+        ]
     },
     "formatter": {
         "indentStyle": "space",
@@ -15,22 +20,17 @@
     "linter": {
         "rules": {
             "a11y": {
-                "noSvgWithoutTitle": "off",
-                "useGenericFontNames": "off"
+                "noSvgWithoutTitle": "off"
             },
             "correctness": {
+                "noUnusedFunctionParameters": "off",
                 "noUnusedImports": {
                     "fix": "safe",
-                    "level": "info"
-                }
-            },
-            "suspicious": {
-                "noArrayIndexKey": "off",
-                "noDoubleEquals": {
-                    "fix": "safe",
-                    "level": "warn",
+                    "level": "info",
                     "options": {}
-                }
+                },
+                "useParseIntRadix": "off",
+                "useHookAtTopLevel": "off"
             },
             "style": {
                 "noNonNullAssertion": "off",
@@ -41,7 +41,16 @@
                 },
                 "useTemplate": {
                     "fix": "safe",
-                    "level": "info"
+                    "level": "info",
+                    "options": {}
+                }
+            },
+            "suspicious": {
+                "noArrayIndexKey": "off",
+                "noDoubleEquals": {
+                    "fix": "safe",
+                    "level": "warn",
+                    "options": {}
                 }
             },
             "nursery": {
@@ -49,7 +58,9 @@
                     "fix": "safe",
                     "level": "info",
                     "options": {
-                        "functions": ["cn"]
+                        "functions": [
+                            "cn"
+                        ]
                     }
                 }
             }
@@ -59,6 +70,11 @@
         "formatter": {
             "semicolons": "asNeeded",
             "trailingCommas": "none"
+        }
+    },
+    "json": {
+        "formatter": {
+            "expand": "always"
         }
     }
 }

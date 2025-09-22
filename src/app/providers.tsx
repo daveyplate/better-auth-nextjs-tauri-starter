@@ -23,7 +23,11 @@ export function Providers({ children }: { children: ReactNode }) {
                 navigate={router.push}
                 replace={router.replace}
                 onSessionChange={() => {
+                    // Clear router cache (protected routes)
                     router.refresh()
+                }}
+                social={{
+                    providers: ["google"]
                 }}
                 Link={Link}
             >

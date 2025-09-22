@@ -9,16 +9,20 @@ const corsOptions = {
     "Access-Control-Allow-Credentials": "true"
 }
 
+const protectedRoutes = ["/account/settings"]
+
 export async function middleware(request: NextRequest) {
     // Check cookie for optimistic redirects for protected routes
     // Use getSession in your RSC to protect a route via SSR or useAuthenticate client side
-    const sessionCookie = getSessionCookie(request)
+    if (protectedRoutes.includes(request.nextUrl.pathname)) {
+        const sessionCookie = getSessionCookie(request)
 
-    if (!sessionCookie) {
-        const redirectTo = request.nextUrl.pathname + request.nextUrl.search
-        return NextResponse.redirect(
-            new URL(`/auth/sign-in?redirectTo=${redirectTo}`, request.url)
-        )
+        if (!sessionCookie) {
+            const redirectTo = request.nextUrl.pathname + request.nextUrl.search
+            return NextResponse.redirect(
+                new URL(`/auth/sign-in?redirectTo=${redirectTo}`, request.url)
+            )
+        }
     }
 
     // Check the origin from the request
@@ -53,5 +57,5 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
     // Protected routes
-    matcher: ["/account/settings"]
+    matcher: "/((?!_next|_vercel|.*\\..*).*)"
 }

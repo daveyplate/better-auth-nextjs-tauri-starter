@@ -20,7 +20,8 @@ export function Providers({ children }: { children: ReactNode }) {
         authClient,
         scheme: "bas",
         debugLogs: true,
-        onSuccess: () => router.push("/auth/callback")
+        onSuccess: (callbackURL) =>
+            router.push(`/auth/callback?redirectTo=${callbackURL}`)
     })
 
     return (

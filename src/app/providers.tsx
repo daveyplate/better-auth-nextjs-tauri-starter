@@ -38,6 +38,8 @@ export function Providers({ children }: { children: ReactNode }) {
                         })
 
                         console.log(response)
+
+                        window.location.href = response.url!
                     }
                 }}
                 Link={Link}

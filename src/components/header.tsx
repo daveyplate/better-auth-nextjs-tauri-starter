@@ -28,7 +28,7 @@ export function Header() {
 
             <div className="flex items-center gap-2">
                 <Link
-                    href="https://github.com/daveyplate/better-auth-nextjs-starter"
+                    href="https://github.com/daveyplate/better-auth-nextjs-tauri-starter"
                     target="_blank"
                 >
                     <Button

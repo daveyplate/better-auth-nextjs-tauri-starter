@@ -14,7 +14,10 @@ You can generate a `BETTER_AUTH_SECRET` [here](https://www.better-auth.com/docs/
 ```bash
 BETTER_AUTH_SECRET=""
 DATABASE_URL=""
+NEXT_PUBLIC_BASE_URL=""
 ```
+
+NEXT_PUBLIC_BASE_URL must be set to your production URL, this is used for the Tauri static export to send requests to your production server.
 
 Then generate your schema and perform migrations with drizzle-kit.
 

@@ -27,7 +27,18 @@ export function Providers({ children }: { children: ReactNode }) {
                     router.refresh()
                 }}
                 social={{
-                    providers: ["google"]
+                    providers: ["google"],
+                    signIn: async (params) => {
+                        const response = await authClient.signIn.social({
+                            ...params,
+                            fetchOptions: {
+                                throw: true
+                            },
+                            disableRedirect: true
+                        })
+
+                        console.log(response)
+                    }
                 }}
                 Link={Link}
             >

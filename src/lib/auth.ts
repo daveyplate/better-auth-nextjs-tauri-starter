@@ -1,3 +1,4 @@
+import { tauri } from "@daveyplate/better-auth-tauri/plugin"
 import { betterAuth } from "better-auth"
 import { drizzleAdapter } from "better-auth/adapters/drizzle"
 
@@ -21,7 +22,7 @@ export const auth = betterAuth({
     },
     trustedOrigins: [
         process.env.NEXT_PUBLIC_BASE_URL!,
-        `${process.env.NEXT_PUBLIC_DEEP_LINK_SCHEME}://`,
+        "bas://",
         "http://localhost:3000",
         "tauri://localhost",
         "http://tauri.localhost",
@@ -36,5 +37,10 @@ export const auth = betterAuth({
                       secure: true
                   }
                 : undefined
-    }
+    },
+    plugins: [
+        tauri({
+            scheme: "bas"
+        })
+    ]
 })

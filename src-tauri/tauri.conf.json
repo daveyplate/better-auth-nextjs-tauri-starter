@@ -6,8 +6,8 @@
     "build": {
         "frontendDist": "../out",
         "devUrl": "http://localhost:3000",
-        "beforeDevCommand": "turbo dev",
-        "beforeBuildCommand": "turbo export"
+        "beforeDevCommand": "pnpm dev",
+        "beforeBuildCommand": "pnpm export"
     },
     "app": {
         "windows": [
@@ -33,5 +33,14 @@
             "icons/icon.icns",
             "icons/icon.ico"
         ]
+    },
+    "plugins": {
+        "deep-link": {
+            "desktop": {
+                "schemes": [
+                    "bas"
+                ]
+            }
+        }
     }
 }

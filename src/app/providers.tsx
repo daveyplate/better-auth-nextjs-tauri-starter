@@ -2,14 +2,15 @@
 
 import { signInSocial } from "@daveyplate/better-auth-tauri"
 import { useBetterAuthTauri } from "@daveyplate/better-auth-tauri/react"
-
 import { AuthUIProvider } from "@daveyplate/better-auth-ui"
+import { isTauri } from "@tauri-apps/api/core"
 import { platform } from "@tauri-apps/plugin-os"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { ThemeProvider } from "next-themes"
 import type { ReactNode } from "react"
 import { Toaster } from "sonner"
+
 import { authClient } from "@/lib/auth-client"
 import { isProduction } from "@/lib/utils"
 
@@ -41,6 +42,7 @@ export function Providers({ children }: { children: ReactNode }) {
                 }}
                 baseURL={
                     typeof window !== "undefined" &&
+                    isTauri() &&
                     platform() === "macos" &&
                     isProduction
                         ? `bas://`

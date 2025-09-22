@@ -10,6 +10,16 @@
                 "!.next/cache/**"
             ]
         },
+        "export": {
+            "dependsOn": [
+                "^export"
+            ],
+            "outputs": [
+                "out/**",
+                ".next/**",
+                "!.next/cache/**"
+            ]
+        },
         "check-types": {
             "dependsOn": [
                 "^check-types"

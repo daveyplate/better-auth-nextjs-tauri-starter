@@ -1,24 +1,25 @@
 {
-    "$schema": "../gen/schemas/desktop-schema.json",
-    "identifier": "default",
-    "description": "enables the default permissions",
-    "windows": [
-        "main"
-    ],
-    "permissions": [
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "enables the default permissions",
+  "windows": [
+    "main"
+  ],
+  "permissions": [
+    {
+      "identifier": "http:default",
+      "allow": [
         {
-            "identifier": "http:default",
-            "allow": [
-                {
-                    "url": "https://*:*"
-                },
-                {
-                    "url": "http://*:*"
-                }
-            ]
+          "url": "https://*:*"
         },
-        "core:default",
-        "os:default",
-        "deep-link:default"
-    ]
+        {
+          "url": "http://*:*"
+        }
+      ]
+    },
+    "core:default",
+    "os:default",
+    "deep-link:default",
+    "opener:default"
+  ]
 }

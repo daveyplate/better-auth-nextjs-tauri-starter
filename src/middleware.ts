@@ -1,11 +1,7 @@
 import { getSessionCookie } from "better-auth/cookies"
 import { type NextRequest, NextResponse } from "next/server"
 
-const allowedOrigins = [
-    "http://tauri.localhost"
-    // "tauri://localhost",
-    // "http://localhost:3000"
-]
+const allowedOrigins = ["http://localhost:3000", "http://tauri.localhost"]
 
 const corsOptions = {
     "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",

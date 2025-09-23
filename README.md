@@ -1,9 +1,6 @@
 # Better Auth Next.js Starter (App Router)
 
-[Demo](https://nextjs.better-auth-starter.com)
-
-- [Pages Router](https://github.com/daveyplate/better-auth-nextjs-pages-starter)
-- [TanStack Start](https://github.com/daveyplate/better-auth-tanstack-starter)
+[Demo](https://tauri.better-auth-starter.com)
 
 ## Installation
 
@@ -15,6 +12,8 @@ You can generate a `BETTER_AUTH_SECRET` [here](https://www.better-auth.com/docs/
 BETTER_AUTH_SECRET=""
 DATABASE_URL=""
 NEXT_PUBLIC_BASE_URL=""
+GOOGLE_CLIENT_ID=""
+GOOGLE_CLIENT_SECRET=""
 ```
 
 NEXT_PUBLIC_BASE_URL must be set to your production URL, this is used for the Tauri static export to send requests to your production server.
@@ -36,6 +35,8 @@ npx drizzle-kit migrate
 [Better Auth](https://better-auth.com)
 
 [Better Auth UI](https://better-auth-ui.com)
+
+[Tauri v2](https://v2.tauri.app)
 
 [shadcn/ui](https://ui.shadcn.com)
 

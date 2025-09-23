@@ -18,9 +18,9 @@ export function Providers({ children }: { children: ReactNode }) {
     useBetterAuthTauri({
         authClient,
         scheme: "bas",
-        debugLogs: true,
         onSuccess: (callbackURL) =>
-            router.push(`/auth/callback?redirectTo=${callbackURL}`)
+            router.push(`/auth/callback?redirectTo=${callbackURL}`),
+        debugLogs: false
     })
 
     return (

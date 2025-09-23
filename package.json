@@ -8,6 +8,7 @@
         "start": "next start",
         "export": "cross-env NEXT_PUBLIC_EXPORT=true next build",
         "lint": "biome check",
+        "format": "biome format --write",
         "check-types": "tsc --noEmit"
     },
     "dependencies": {

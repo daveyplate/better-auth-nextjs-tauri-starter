@@ -27,5 +27,5 @@ export const auth = betterAuth({
             ? { sameSite: "none", secure: true }
             : undefined
     },
-    plugins: [tauri({ scheme: "bas" })]
+    plugins: [tauri({ scheme: "bas", debugLogs: false })]
 })

@@ -3,6 +3,7 @@ use tauri::Manager;
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
+        .plugin(tauri_plugin_single_instance::init(|_app, _args, _cwd| {}))
         .plugin(tauri_plugin_opener::init())
         .plugin(tauri_plugin_deep_link::init())
         .plugin(tauri_plugin_http::init())
@@ -17,10 +18,10 @@ pub fn run() {
             }
 
             let main_webview = app.get_webview_window("main").unwrap();
-            let _ = main_webview.with_webview(|webview| {
+            let _ = main_webview.with_webview(|_webview| {
                 #[cfg(target_os = "macos")]
                 unsafe {
-                    let view: &objc2_web_kit::WKWebView = &*webview.inner().cast();
+                    let view: &objc2_web_kit::WKWebView = &*_webview.inner().cast();
                     view.setAllowsBackForwardNavigationGestures(true);
                 }
             });

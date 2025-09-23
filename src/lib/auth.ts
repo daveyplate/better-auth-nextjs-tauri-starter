@@ -26,9 +26,8 @@ export const auth = betterAuth({
         // "bas://",
         // "http://localhost:3000",
         // "tauri://localhost",
-        // "http://tauri.localhost",
-        // "https://leaked.ngrok.dev",
-        // "null*"
+        "http://tauri.localhost",
+        "null*"
     ],
     advanced: {
         defaultCookieAttributes: isProduction

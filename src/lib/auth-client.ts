@@ -5,7 +5,5 @@ import { baseURL } from "./utils"
 
 export const authClient = createAuthClient({
     baseURL,
-    fetchOptions: {
-        customFetchImpl: tauriFetchImpl
-    }
+    fetchOptions: { customFetchImpl: tauriFetchImpl }
 })

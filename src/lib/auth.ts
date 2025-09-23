@@ -22,9 +22,6 @@ export const auth = betterAuth({
         }
     },
     trustedOrigins: [
-        // process.env.NEXT_PUBLIC_BASE_URL!,
-        // "bas://",
-        // "tauri://localhost",
         "http://localhost:3000",
         "http://tauri.localhost",
         "null*"

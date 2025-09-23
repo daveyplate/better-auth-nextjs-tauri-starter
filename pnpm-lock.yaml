@@ -12,8 +12,8 @@ importers:
         specifier: ^0.1.6
         version: 0.1.6(@tauri-apps/api@2.8.0)(@tauri-apps/plugin-deep-link@2.4.3)(@tauri-apps/plugin-http@2.5.2)(@tauri-apps/plugin-opener@2.5.0)(@tauri-apps/plugin-os@2.3.1)(better-auth@1.3.14(next@15.5.4(@babel/core@7.28.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@daveyplate/better-auth-ui':
-        specifier: ^3.2.2
-        version: 3.2.2(412620166b1be09a5d95a05cfd266a52)
+        specifier: ^3.2.5
+        version: 3.2.5(412620166b1be09a5d95a05cfd266a52)
       '@radix-ui/react-dropdown-menu':
         specifier: ^2.1.16
         version: 2.1.16(@types/react-dom@19.1.9(@types/react@19.1.13))(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -398,8 +398,8 @@ packages:
       react: '>=18.0.0'
       react-dom: '>=18.0.0'
 
-  '@daveyplate/better-auth-ui@3.2.2':
-    resolution: {integrity: sha512-6Jx2DM1JP+SJ4Is3zJC93rYQqYtxS41BLUnthvoxxDsrcO987w94YHGQ1ZmeUhbZYGGEgRdhcl+4C9Y+/Jxnmw==}
+  '@daveyplate/better-auth-ui@3.2.5':
+    resolution: {integrity: sha512-pY3NbH0VBso0Ny8BfPUZdmMnGyRw1vQ/+AkJORMHTkDUuo6/b1NdXs33zBCjH1pb1zp9QDgbHc2kiy0Qggy/VQ==}
     peerDependencies:
       '@daveyplate/better-auth-tanstack': ^1.3.6
       '@hookform/resolvers': '>=5.2.0'
@@ -4040,7 +4040,7 @@ snapshots:
       react: 19.1.1
       react-dom: 19.1.1(react@19.1.1)
 
-  '@daveyplate/better-auth-ui@3.2.2(412620166b1be09a5d95a05cfd266a52)':
+  '@daveyplate/better-auth-ui@3.2.5(412620166b1be09a5d95a05cfd266a52)':
     dependencies:
       '@better-fetch/fetch': 1.1.18
       '@daveyplate/better-auth-tanstack': 1.3.6(@tanstack/query-core@5.80.10)(@tanstack/react-query@5.80.10(react@19.1.1))(better-auth@1.3.14(next@15.5.4(@babel/core@7.28.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)

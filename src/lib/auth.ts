@@ -22,13 +22,13 @@ export const auth = betterAuth({
         }
     },
     trustedOrigins: [
-        process.env.NEXT_PUBLIC_BASE_URL!,
-        "bas://",
-        "http://localhost:3000",
-        "tauri://localhost",
-        "http://tauri.localhost",
-        "https://leaked.ngrok.dev",
-        "null*"
+        // process.env.NEXT_PUBLIC_BASE_URL!,
+        // "bas://",
+        // "http://localhost:3000",
+        // "tauri://localhost",
+        // "http://tauri.localhost",
+        // "https://leaked.ngrok.dev",
+        // "null*"
     ],
     advanced: {
         defaultCookieAttributes: isProduction

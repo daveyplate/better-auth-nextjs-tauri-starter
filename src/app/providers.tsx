@@ -4,7 +4,6 @@ import { signInSocial } from "@daveyplate/better-auth-tauri"
 import { useBetterAuthTauri } from "@daveyplate/better-auth-tauri/react"
 import { AuthUIProvider } from "@daveyplate/better-auth-ui"
 import { isTauri } from "@tauri-apps/api/core"
-import { platform } from "@tauri-apps/plugin-os"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { ThemeProvider } from "next-themes"
@@ -12,7 +11,6 @@ import type { ReactNode } from "react"
 import { Toaster } from "sonner"
 
 import { authClient } from "@/lib/auth-client"
-import { isProduction } from "@/lib/utils"
 
 export function Providers({ children }: { children: ReactNode }) {
     const router = useRouter()
@@ -40,11 +38,7 @@ export function Providers({ children }: { children: ReactNode }) {
                     // Clear router cache (protected routes)
                     router.refresh()
                 }}
-                baseURL={
-                    isProduction && isTauri() && platform() === "macos"
-                        ? "bas://"
-                        : undefined
-                }
+                baseURL={isTauri() ? "bas://" : undefined}
                 social={{
                     providers: ["google"],
                     signIn: (params) => signInSocial({ ...params, authClient })

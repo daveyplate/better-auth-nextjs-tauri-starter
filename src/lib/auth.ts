@@ -21,7 +21,11 @@ export const auth = betterAuth({
             clientSecret: process.env.GOOGLE_CLIENT_SECRET!
         }
     },
-    trustedOrigins: ["http://localhost:3000", "null*"],
+    trustedOrigins: [
+        "http://localhost:3000",
+        "http://tauri.localhost",
+        "null*"
+    ],
     advanced: {
         defaultCookieAttributes: isProduction
             ? { sameSite: "none", secure: true }
